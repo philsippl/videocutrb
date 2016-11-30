@@ -12,6 +12,5 @@ list.map{ |l|
   out = l[0].gsub(".avi", ".mp4")
   cmd = "avconv -y -i input/#{l[0]} -vcodec libx264 -acodec copy -aspect 16:9 -ss #{l[1]} -t #{l[2]} output/#{out}"
   puts "cutting #{c} of #{list.size}"
-  #Open3.capture3(cmd)
-  system(cmd)
+  Open3.capture3(cmd)
 }
